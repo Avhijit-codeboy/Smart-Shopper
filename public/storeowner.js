@@ -1,7 +1,7 @@
 let request = document.getElementById('requests');
 
 const firebaseConfig = {
-    apiKey: "$Your_Firebase_Token",
+    apiKey: "AIzaSyCssHyv0sRII_UQsBrhhMin8zlcZ-Tc2HI",
     authDomain: "smart-shopper-92b6d.firebaseapp.com",
     databaseURL: "https://smart-shopper-92b6d.firebaseio.com",
     projectId: "smart-shopper-92b6d",
