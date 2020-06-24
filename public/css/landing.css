@@ -1,0 +1,90 @@
+header {
+  position: relative;
+  background-color: black;
+  height: 20vh;
+  min-height: 20rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+@media (pointer: coarse) and (hover: none) {
+  header {
+    background: url("/images_videos/shopping.mp4") black no-repeat center center scroll;
+  }
+  
+}
+#heading{
+  text-shadow:1px 1px 5px #ffffff;
+}
+.container-fluid{
+  padding:40px 30px;
+  background:rgba(211,211,211,0.5);
+}
+.container-fluid h1{
+  text-shadow:1px 1px 2px #000000;
+}
+#registration{
+  background:rgb(0,0,0);
+  padding-left:40px;
+  color:white;
+}
+#customer{
+  padding-left:30px;
+}
+#image1{
+  padding-left:8vw;
+}
+#customer:hover,#shopkeeper:hover{
+  box-shadow:1px 1px 3px #ffffff;
+}
+#shopkeeper h2,#customer h2{
+  text-shadow:1px 1px 2px #ffffff;
+}
+@media screen and (max-width: 768px) {
+  #image1 img {
+    width:100px;
+    height:100px;
+    padding-top:20px;
+    margin-top:auto;
+    margin-left:30%;
+    display:block;
+  }
+  #customer{
+    padding-top:20px;
+    padding-left:20px;
+  }
+}
+.btn-info{
+  box-shadow:1px 1px 2px #ffffff;
+}
