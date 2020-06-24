@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/landing.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+		
+	</nav>
+<header>
+  <div class="overlay"></div>
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="/images_videos/shopping.mp4" type="video/mp4">
+  </video>
+  <div class="container h-100">
+    <div class="d-flex h-100 text-center align-items-center">
+      <div class="w-100 text-white">
+        <h1 class="display-3" id="heading">Smart Shopper</h1>
+        <p class="lead mb-0"><em>Find your daily life essentials the easy way.</em></p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class = "container-fluid" id="registration">
+	<div class = "row">
+		<div class="col-sm-4 text-center" id="shopkeeper">
+			<h2>For shopkeepers</h2>
+			<p>Want to increase your small customer base and earn more?
+				You are at the right place! Sign Up at <em>Smart Shopper</em> and lure customers 
+				who are in the viscinity of your shop but may not have known about your shop.
+			</p>
+			<form action="shopkeeper" method="POST">
+				<input type="submit" class = "btn btn-info" value="SignUp">
+			</form>
+			
+		</div>
+		<div class="col-sm-4" id="image1" class="img-thumbnail">
+			<img src="/images_videos/shop.png" alt="shop image">
+		</div>
+		<div class="col-sm-4 text-center" id="customer">
+			<h2>For customers</h2>
+			<p>Want a kg of sugar or a packet of tea but the nearest grocery shop doesn't have one.Don't worry, you may find your product from a similar shop two blocks away, and what's more comfortable than getting the item home delivered!</p>
+			<form action="customer" method="POST">
+			<input type="submit" class = "btn btn-info"value="SignUp"></input>
+		</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Store Owner</title>
+		<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/css/storeowner.css"></link>
+
+ <!--firebase-->
+   <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+
+
+</head>
+<body onload="load()">
+	
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="topnav">
+	<ul class="navbar-nav ml-auto">
+		<li class="nav-item">
+			<a class="nav-link" href=""><i class="fa fa-user fa-fw fa-inverse" aria-hidden="true"></i></a>
+		</li>
+	</ul>
+</nav>
+<div class="container-fluid" id="utility">
+<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-6 text-center" id="pendingList" style="height:100%;">
+				<h2>To-Do List</h2>
+				<ul id="todoitems">
+					
+				</ul>
+			</div>
+			<div class="col-sm-6 text-center" id="msgList" style="height:100%">
+				<h2>Message List</h2>
+				<ul id="requests">
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script src="/storeowner.js"></script>
+</html>

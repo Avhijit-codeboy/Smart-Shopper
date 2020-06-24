@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    .signUp{
+      position:relative;
+      top:150px;
+      width: 300px;
+      margin: 0 auto;
+      background:rgba(255,255,255,0.8);
+      font-family: Tahoma, Geneva, sans-serif;
+    }
+.signUp h1 {
+      text-shadow:1px 1px 3px black;
+      text-align: center;
+      color: #4d4d4d;
+      font-size: 24px;
+      padding: 20px 0 20px 0;
+    }
+.signUp input[type="password"],
+.signUp input[type="text"] {
+      width: 90%;
+      padding: 10px;
+      border: 1px solid #dddddd;
+      margin-bottom: 15px;
+      margin-left:12px;
+      box-sizing:border-box;
+    }
+.signUp #signup1 {
+      width: 90%;
+      padding: 15px;
+      margin-left:12px;
+      margin-bottom:10px;
+      background-color: #00FFFF;
+      border: 0;
+      box-sizing: border-box;
+      cursor: pointer;
+      font-weight: bold;
+      color: #000000;
+    }
+    #login1,#customerPage{
+      width: 90%;
+      padding: 15px;
+      margin-left:12px;
+      margin-bottom:10px;
+      background-color: rgba(0,0,255,0.7);
+      border: 0;
+      box-sizing: border-box;
+      cursor: pointer;
+      font-weight: bold;
+      color: #000000;
+    }
+    #customerPage{
+      background:rgba(0,0,0,0.8);
+      color:#fff;
+      visibility:hidden;
+    }
+  </style>
+</head>
+<body>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCssHyv0sRII_UQsBrhhMin8zlcZ-Tc2HI",
+    authDomain: "smart-shopper-92b6d.firebaseapp.com",
+    databaseURL: "https://smart-shopper-92b6d.firebaseio.com",
+    projectId: "smart-shopper-92b6d",
+    storageBucket: "smart-shopper-92b6d.appspot.com",
+    messagingSenderId: "651849033068",
+    appId: "1:651849033068:web:969d100ecc21351c52ff49",
+    measurementId: "G-FK3RET326L"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<div class = signUp>
+  <h1>Smart Shopper</h1>
+        <input type="text" name="email" placeholder="email" required id = "email">
+        <input type="password" name="password" placeholder="Password" required id = "password">
+        <button id = "signup1">Sign Up</button>
+        <button id="login1">Log In</button>
+        <form action="customerPage" method="POST" id="form1">
+          <input type="hidden" name="username"/>
+        </form>
+        <button id="customerPage" type="submit" form="form1">Take me to customer page</button>
+</div>
+<script>
+let buttonSignUp = document.getElementById('signup1');
+let buttonLogIn = document.getElementById('login1');
+let customerPage = document.getElementById('customerPage');
+  function signUp(){
+    let email = document.querySelector("#email").value;
+  let password = document.querySelector("#password").value;
+  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+  // Handle Errors here.
+  let errorCode = error.code;
+  let errorMessage = error.message;
+  if(error){
+    console.log(errorCode);
+    console.log(errorMessage);
+  }
+});
+}
+
+function logIn(){
+  let email = document.querySelector("#email").value;
+  let password = document.querySelector("#password").value;
+  //console.time();
+  firebase.auth().signInWithEmailAndPassword(email, password)
+   .then(function(firebaseuser){
+    document.querySelector("#form1 input").value=email;
+   customerPage.style.visibility="visible";  
+    //console.timeEnd(); 
+  })
+  .catch(function(error) {
+  // Handle Errors here.
+  let errorCode = error.code;
+  let errorMessage = error.message;
+  if(error){
+    console.log(errorCode);
+    console.log(errorMessage);
+  }
+});
+}
+buttonSignUp.addEventListener("click",signUp);
+buttonLogIn.addEventListener("click",logIn);
+</script>
+</body>
+</html>
