@@ -12,7 +12,7 @@ const tiles = L.tileLayer(tileURL,{attribution});
 tiles.addTo(mymap);
  
  const firebaseConfig = {
-    apiKey: "$Your_Firebase_Token",
+    apiKey: "AIzaSyCssHyv0sRII_UQsBrhhMin8zlcZ-Tc2HI",
     authDomain: "smart-shopper-92b6d.firebaseapp.com",
     databaseURL: "https://smart-shopper-92b6d.firebaseio.com",
     projectId: "smart-shopper-92b6d",
@@ -32,7 +32,7 @@ function clickMe(){
 	let text = document.createTextNode(input.value);
 	const q = encodeURIComponent(input.value);
 	const uri = 'https://api.wit.ai/message?q=' + q;
-	const auth = 'Bearer  $your_token';
+	const auth = 'Bearer  ZZLZ66T7IR2OOXZAO5ETM4K4LD5TFIMP';
 	li.appendChild(text);
 	document.getElementById("messages").appendChild(li);
 	input.value="";
